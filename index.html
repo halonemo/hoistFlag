@@ -20,26 +20,25 @@
 
 </head>
 <body onload="hoistFlag.init()">
-
-<!-- 【2】构建界面 -->
-<div class="main">
-	<div class="dialog loading-dialog">
-		<div class="pic">
-			<img class="dialog1" src="./src/images/loading.png">
-			<div class="loading-line">
-				<div class="progress">
-					<div class="icon">
-					</div>
-					<div class="line">
-						
-					</div>
+<div class="dialog loading-dialog">
+	<div class="pic">
+		<img class="dialog1" src="./src/images/loading.png">
+		<div class="loading-line">
+			<div class="progress">
+				<div class="icon">
+				</div>
+				<div class="line">
+					
 				</div>
 			</div>
-			<div class="loading-btn" onclick="hoistFlag.start()">
-				<img src="./src/images/loading-btn.png" alt="">
-			</div>
+		</div>
+		<div class="loading-btn" onclick="hoistFlag.start()">
+			<img src="./src/images/loading-btn.png" alt="">
 		</div>
 	</div>
+</div>
+<!-- 【2】构建界面 -->
+<div class="main">
 	<div class="mainBox" style="display: none;">
 		<!-- 按钮控制区域 -->
 		<div class="pd btns">
@@ -93,7 +92,6 @@
 		</div>
 	</div>
 </div>
-
 
 <!-- 【3】实现录音逻辑 -->
 <script>

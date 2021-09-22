@@ -54,6 +54,7 @@ html,body{
 	height:100%;
 	width:100%;
 	overflow: hidden;
+	background:#000;
 }
 pre{
 	white-space:pre-wrap;
@@ -75,6 +76,7 @@ a:hover{
 	max-width: 700px;
 	height:100%;
 	width:100%;
+	display: none;
 }
 
 

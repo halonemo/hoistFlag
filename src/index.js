@@ -69,6 +69,7 @@ var hoistFlag = {
 	},
 	init: function(){
 		$(".progress").addClass("animate")
+		$(".main").show()
 		setTimeout(() => {
 			$(".progress").width("100%")
 			$(".loading-btn").show()
