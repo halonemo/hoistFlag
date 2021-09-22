@@ -7,16 +7,6 @@
 	<link rel="stylesheet" href="./src/index.css">
 	<title>OPPO</title>
 	<script src="./src/jquery.min.js"></script>
-	<!-- 【1.1】引入核心文件 -->
-	<script src="./src/recorder-core.js"></script>
-
-	<!-- 【1.2】引入相应格式支持文件；如果需要多个格式支持，把这些格式的编码引擎js文件放到后面统统加载进来即可 -->
-	<script src="./src/engine/mp3.js"></script>
-	<script src="./src/engine/mp3-engine.js"></script>
-
-	<!-- 【1.3】引入可选的扩展支持项，如果不需要这些扩展功能可以不引入 -->
-	<script src="./src/extensions/frequency.histogram.view.js"></script>
-	<script src="./src/extensions/lib.fft.js"></script>
 	<script>
 		function loadingStart() {
 			$(".progress").show()
@@ -101,7 +91,17 @@
 			</div>
 		</div>
 	</div>
+	
+	<!-- 【1.1】引入核心文件 -->
+	<script src="./src/recorder-core.js"></script>
 
+	<!-- 【1.2】引入相应格式支持文件；如果需要多个格式支持，把这些格式的编码引擎js文件放到后面统统加载进来即可 -->
+	<script src="./src/engine/mp3.js"></script>
+	<script src="./src/engine/mp3-engine.js"></script>
+
+	<!-- 【1.3】引入可选的扩展支持项，如果不需要这些扩展功能可以不引入 -->
+	<script src="./src/extensions/frequency.histogram.view.js"></script>
+	<script src="./src/extensions/lib.fft.js"></script>
 	<!-- 【3】实现录音逻辑 -->
 	<script>
 		var rec, wave, recBlob;
@@ -331,14 +331,6 @@
 		};
 //recOpen弹框End
 	</script>
-
-
-
-
-
-
-
-
 	<!--以下这坨可以忽略-->
 	<script>
 		function reclog(s, color) {
@@ -357,9 +349,6 @@
 		};
 
 	</script>
-
 	<script src="./src/index.js"></script>
-
 </body>
-
 </html>
