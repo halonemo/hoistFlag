@@ -69,7 +69,7 @@ var hoistFlag = {
 	},
 	init: function(){
 		$(".loading-btn").show()
-		$(".progress").width("100%")
+		$(".progress").addClass("animate")
 		hoistFlag.dataInit()
 		$('body').on('reSize',function(){
 			hoistFlag.dataInit()
