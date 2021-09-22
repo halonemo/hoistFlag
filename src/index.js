@@ -23,25 +23,25 @@ var hoistFlag = {
 				hoistFlag.stepIndex = 1
 				hoistFlag.stop = true
 				recPause && recPause()
-				$(".dialog").show()
+				$(".step-dialog").show()
 				$(".dialog1").show().siblings("img").hide()
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
 				recPause && recPause()
-				$(".dialog").show()
+				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
 			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
 				hoistFlag.stepIndex = 3
 				hoistFlag.stop = true
 				recPause && recPause()
-				$(".dialog").show()
+				$(".step-dialog").show()
 				$(".dialog3").show().siblings("img").hide()
 			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
 				hoistFlag.stepIndex = 4
 				hoistFlag.destroy = true
 				recPause && recPause()
-				$(".dialog").show()
+				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
 			}else{
 				var num = powerLevel < 50 ? 10 : powerLevel / 5
@@ -51,8 +51,12 @@ var hoistFlag = {
 		}
 	},
 	close(){
-		$(".dialog").hide()
+		$(".step-dialog").hide()
 		hoistFlag.stop = false
+	},
+	start(){
+		$(".loading-dialog").hide()
+		$(".touch-btn").show()
 	},
 	dataInit: function(){
 		hoistFlag.bgHeight = $(".starry-bg").height()

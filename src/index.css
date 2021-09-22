@@ -67,6 +67,9 @@ a:hover{
 }
 
 .main{
+	position: absolute;
+	left:0;
+	top:0;
 	overflow: hidden;
 	margin:0 auto;
 	max-width: 700px;
@@ -163,6 +166,7 @@ a:hover{
 	transform: translate(-50%,-50%);
 	background: #fff;
 	border-radius: 100px;
+	display: none;
 }
 .dialog{
 	position: absolute;
@@ -173,7 +177,6 @@ a:hover{
 	width: 100%;
 	height:100%;
 	text-align: center;
-	display: none;
 }
 .dialog .pic{
 	width:100%;
@@ -186,7 +189,6 @@ a:hover{
 	width: 80%;
 	display: block;
 	margin:0 auto;
-	display: none;
 }
 .dialog .close{
 	width: 30px;
@@ -197,4 +199,17 @@ a:hover{
 	left:50%;
 	bottom: -50px;
 	transform: translateX(-50%);
+}
+.dialog .loading-btn{
+	width:100px;
+	position: absolute;
+	left:50%;
+	bottom:0;
+	transform: translate(-50%,150%);
+}
+.step-dialog{
+	display: none;
+}
+.step-dialog img{
+	display: none;
 }
