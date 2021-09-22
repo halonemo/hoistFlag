@@ -44,7 +44,7 @@ var hoistFlag = {
 				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
 			}else{
-				var num = powerLevel < 40 ? 10 : powerLevel / 3
+				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
 				$(".starry-bg").css('bottom',hoistFlag.bgStart)
 			}
@@ -70,6 +70,8 @@ var hoistFlag = {
 	init: function(){
 		$(".main").show()
 		$(".loading-btn").show()
+		$(".progress").removeClass("animate")
+		$(".progress").width("100%")
 		hoistFlag.dataInit()
 		$('body').on('reSize',function(){
 			hoistFlag.dataInit()
