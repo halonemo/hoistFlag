@@ -8,6 +8,7 @@ var hoistFlag = {
 	flagHeight:0,
 	flagMaxHeight:0,
 	stepIndex: 0,
+	microphone:false,
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
 		// bufferDuration+" / "+powerLevel;
 		console.log(powerLevel)
@@ -55,9 +56,16 @@ var hoistFlag = {
 		hoistFlag.stop = false
 	},
 	start(){
-		$(".loading-dialog").hide()
-		$(".touch-btn").show()
-		recOpen()
+		if(hoistFlag.microphone){
+			$(".loading-dialog").hide()
+			$(".touch-btn").show()
+			recStart()	
+		}else{
+			showDialog();
+		}
+	},
+	recStart(){
+		recStart()	
 	},
 	dataInit: function(){
 		hoistFlag.bgHeight = $(".starry-bg").height()
@@ -68,6 +76,7 @@ var hoistFlag = {
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
 	init: function(){
+		recOpen()
 		$(".main").show()
 		$(".loading-btn").show()
 		$(".progress").removeClass("animate")
@@ -76,15 +85,15 @@ var hoistFlag = {
 		$('body').on('reSize',function(){
 			hoistFlag.dataInit()
 		})
-		$(".touch-btn").on("touchstart",function(event){
-			// console.log(111)
-			event.preventDefault();
-			recStart()
-		})
-		$(".touch-btn").on("touchend",function(event){
-			// console.log(22)
-			event.preventDefault();
-			recPause()
-		})
+		// $(".touch-btn").on("touchstart",function(event){
+		// 	// console.log(111)
+		// 	event.preventDefault();
+		// 	recStart()
+		// })
+		// $(".touch-btn").on("touchend",function(event){
+		// 	// console.log(22)
+		// 	event.preventDefault();
+		// 	recPause()
+		// })
 	}
 }

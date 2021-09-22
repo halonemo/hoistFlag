@@ -126,7 +126,7 @@
 			createDelayDialog(); //我们可以选择性的弹一个对话框：为了防止移动端浏览器存在第三种情况：用户忽略，并且（或者国产系统UC系）浏览器没有任何回调，此处demo省略了弹窗的代码
 			newRec.open(function () {//打开麦克风授权获得相关资源
 				dialogCancel(); //如果开启了弹框，此处需要取消
-
+				hoistFlag.microphone = true
 				rec = newRec;
 
 				//此处创建这些音频可视化图形绘制浏览器支持妥妥的
