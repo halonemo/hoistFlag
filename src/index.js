@@ -23,19 +23,16 @@ var hoistFlag = {
 			if(hoistFlag.stepIndex === 0){
 				hoistFlag.stepIndex = 1
 				hoistFlag.stop = true
-				recPause && recPause()
 				$(".step-dialog").show()
 				$(".dialog1").show().siblings("img").hide()
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
-				recPause && recPause()
 				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
 			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
 				hoistFlag.stepIndex = 3
 				hoistFlag.stop = true
-				recPause && recPause()
 				$(".step-dialog").show()
 				$(".dialog3").show().siblings("img").hide()
 			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
@@ -58,7 +55,6 @@ var hoistFlag = {
 	start(){
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
-			$(".touch-btn").show()
 			recStart()	
 		}else{
 			showDialog();
