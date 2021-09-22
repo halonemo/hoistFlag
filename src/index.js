@@ -44,7 +44,7 @@ var hoistFlag = {
 				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
 			}else{
-				var num = powerLevel < 50 ? 10 : powerLevel / 5
+				var num = powerLevel < 40 ? 10 : powerLevel / 3
 				hoistFlag.bgStart = hoistFlag.bgStart - num
 				$(".starry-bg").css('bottom',hoistFlag.bgStart)
 			}
@@ -68,8 +68,11 @@ var hoistFlag = {
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
 	init: function(){
-		$(".loading-btn").show()
 		$(".progress").addClass("animate")
+		setTimeout(() => {
+			$(".progress").width("100%")
+			$(".loading-btn").show()
+		}, 3000);
 		hoistFlag.dataInit()
 		$('body').on('reSize',function(){
 			hoistFlag.dataInit()
