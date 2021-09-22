@@ -220,13 +220,14 @@ a:hover{
 	left:50%;
 	transform: translateX(-50%);
 	border-radius: 10px;
+	display: none;
 }
 .dialog .loading-line .progress{
 	background: #f4e9ff;
 	width: 0;
 	height:100%;
+	border-radius: 10px;
 	position: relative;
-	display: none;
 }
 .dialog .loading-line .progress.animate{
 	animation-name: example;
