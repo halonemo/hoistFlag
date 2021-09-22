@@ -225,6 +225,7 @@ a:hover{
 	width: 0;
 	height:100%;
 	position: relative;
+	display: none;
 }
 .dialog .loading-line .progress.animate{
 	animation-name: example;

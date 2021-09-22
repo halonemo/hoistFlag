@@ -68,7 +68,7 @@ var hoistFlag = {
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
 	init: function(){
-		$(".progress .icon").show()
+		$(".progress ").show()
 		$(".progress").addClass("animate")
 		$(".main").show()
 		setTimeout(() => {
