@@ -11,7 +11,7 @@ var hoistFlag = {
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
 		// bufferDuration+" / "+powerLevel;
 		console.log(powerLevel)
-		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 3){
+		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 1){
 			return 
 		}
 		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
