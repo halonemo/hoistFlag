@@ -11,7 +11,7 @@ var hoistFlag = {
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
 		// bufferDuration+" / "+powerLevel;
 		console.log(powerLevel)
-		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 3){
+		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5){
 			return 
 		}
 		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
@@ -57,6 +57,7 @@ var hoistFlag = {
 	start(){
 		$(".loading-dialog").hide()
 		$(".touch-btn").show()
+		recOpen()
 	},
 	dataInit: function(){
 		hoistFlag.bgHeight = $(".starry-bg").height()
@@ -67,7 +68,6 @@ var hoistFlag = {
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
 	init: function(){
-		recOpen()
 		hoistFlag.dataInit()
 		$('body').on('reSize',function(){
 			hoistFlag.dataInit()
