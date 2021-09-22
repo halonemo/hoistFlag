@@ -60,7 +60,7 @@ var hoistFlag = {
 	start(){
 		$("#audio")[0].volume = 0
 		$("#audio")[0].play()
-		$("#audio")[0].stop()
+		$("#audio")[0].pause()
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
 			recStart()	
