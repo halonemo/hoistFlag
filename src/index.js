@@ -25,22 +25,26 @@ var hoistFlag = {
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog1").show().siblings("img").hide()
+				$("#audio")[0].play()
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
+				$("#audio")[0].play()
 			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
 				hoistFlag.stepIndex = 3
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog3").show().siblings("img").hide()
+				$("#audio")[0].play()
 			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
 				hoistFlag.stepIndex = 4
 				hoistFlag.destroy = true
 				recPause && recPause()
 				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
+				$("#audio")[0].play()
 			}else{
 				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
