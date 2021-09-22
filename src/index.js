@@ -68,13 +68,7 @@ var hoistFlag = {
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
 	init: function(){
-		$(".progress ").show()
-		$(".progress").addClass("animate")
 		$(".main").show()
-		setTimeout(() => {
-			$(".progress").width("100%")
-			$(".loading-btn").show()
-		}, 3000);
 		hoistFlag.dataInit()
 		$('body').on('reSize',function(){
 			hoistFlag.dataInit()
