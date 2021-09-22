@@ -15,7 +15,7 @@ var hoistFlag = {
 			return 
 		}
 		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
-			var num = powerLevel < 30 ? 3 : powerLevel / 10
+			var num = powerLevel < 30 ? 5 : powerLevel / 5
 			hoistFlag.flagHeight = hoistFlag.flagHeight + num
 			$(".flag-wrap").css('height',hoistFlag.flagHeight)
 		}else{

@@ -53,6 +53,7 @@ html,body{
 	background-size: auto 680px;
 	height:100%;
 	width:100%;
+	overflow: hidden;
 }
 pre{
 	white-space:pre-wrap;
@@ -130,8 +131,7 @@ a:hover{
 
 .flag-wrap{
 	height:50%;
-	width:3px;
-	background: #17194c;
+	width:8px;
 	position: absolute;
 	bottom:0;
 	left:50%;
@@ -139,11 +139,20 @@ a:hover{
 }
 .flag-wrap .flag{
 	position: absolute;
-	left:3px;
+	left:0;
 	top:0;;
-	width:60px;
-	height:40px;
-	background: red;;
+	width:86px;
+	height:91px;
+	background: url(./images/flag.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;	
+}
+.flag-wrap .flagstaff{
+	width: 86px;
+	height:100%;
+	background: url(./images/flagpole.png);
+	background-size: 100% auto;
+	background-repeat: repeat-y;
 }
 .touch-btn{
 	width: 60px;
