@@ -69,6 +69,7 @@ var hoistFlag = {
 	},
 	init: function(){
 		$(".main").show()
+		$(".loading-btn").show()
 		hoistFlag.dataInit()
 		$('body').on('reSize',function(){
 			hoistFlag.dataInit()
