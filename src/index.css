@@ -149,9 +149,19 @@ a:hover{
 	top:0;;
 	width:86px;
 	height:91px;
-	background: url(./images/flag.png);
-	background-size: 100% auto;
-	background-repeat: no-repeat;	
+	/* background: url(./images/flag.png); */
+	/* background-size: 100% auto; */
+	/* background-repeat: no-repeat;	 */
+}
+.flag-wrap .flag img{
+	width: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+	display: none;
+}
+.flag-wrap .flag img:first-child{
+	display: block;
 }
 .flag-wrap .flagstaff{
 	width: 86px;

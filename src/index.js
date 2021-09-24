@@ -7,6 +7,7 @@ var hoistFlag = {
 	destroy:false,
 	flagHeight:0,
 	flagMaxHeight:0,
+	flagIndex:0,
 	stepIndex: 0,
 	microphone:false,
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
@@ -71,6 +72,17 @@ var hoistFlag = {
 	recStart(){
 		recStart()	
 	},
+	flagGif(){
+		if(hoistFlag.flagIndex >= 9){
+			hoistFlag.flagIndex = 0
+		}else{
+			hoistFlag.flagIndex = hoistFlag.flagIndex + 1
+		}
+		$(".flag img").eq(hoistFlag.flagIndex).show().siblings().hide()
+		setTimeout(() => {
+			hoistFlag.flagGif()
+		}, 300);
+	},
 	dataInit: function(){
 		hoistFlag.bgHeight = $(".starry-bg").height()
 		hoistFlag.itemHeight = hoistFlag.bgHeight / 4
@@ -80,6 +92,7 @@ var hoistFlag = {
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
 	init: function(){
+		hoistFlag.flagGif()
 		recOpen()
 		$(".main").show()
 		$(".loading-btn").show()
