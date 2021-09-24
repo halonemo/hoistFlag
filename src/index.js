@@ -81,7 +81,7 @@ var hoistFlag = {
 		$(".flag img").eq(hoistFlag.flagIndex).show().siblings().hide()
 		setTimeout(() => {
 			hoistFlag.flagGif()
-		}, 300);
+		}, 100);
 	},
 	dataInit: function(){
 		hoistFlag.bgHeight = $(".starry-bg").height()
