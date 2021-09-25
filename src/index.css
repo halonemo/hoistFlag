@@ -255,7 +255,6 @@ a:hover{
 	animation-name: staranimate;
   	animation-duration: 1.5s;
 	animation-iteration-count:infinite;
-	animation-direction:reverse;
 	animation-timing-function:ease;
 	opacity: 0;
 }
@@ -281,4 +280,64 @@ a:hover{
 }
 .step-dialog img{
 	display: none;
+}
+.dl4{
+	width: 100%;
+	display: block;
+	position: absolute;
+	bottom:0;
+	left:0;
+	transform: translate(0,-120%);
+	z-index: 8;
+}
+.dl0{
+	width: 11%;
+	display: block;
+	position: absolute;
+	bottom:0;
+	left:0;
+	transform: translate(205%,-266%);
+	z-index: 10;
+}
+/* 79 88 */
+.dl1{
+	width: 7.3%;
+	display: block;
+	position: absolute;
+	bottom:0;
+	left:0;
+	transform: translate(140%,-502%);
+	z-index: 10;
+}
+/* 96 108 */
+.dl2{
+	width: 8.8%;
+	display: block;
+	position: absolute;
+	bottom:0;
+	left:0;
+	transform: translate(795%,-733%);
+	z-index: 10;
+}
+/* 37 41 */
+.dl3{
+	width: 3.4%;
+	display: block;
+	position: absolute;
+	bottom:0;
+	left:0;
+	transform: translate(2630%,-1650%);
+	z-index: 10;
+}
+.dl-animate{
+	animation-name: dl4;
+  	animation-duration: 5s;
+}
+@keyframes dl4 {
+	0% {bottom: 0;left:0;margin-right: 0;}
+	5% {opacity: 1;}
+	10% {opacity: 1;}
+	20% {opacity: 1;}
+	90% {opacity: 1;}
+	100% {bottom:50px;opacity: 0;}
 }

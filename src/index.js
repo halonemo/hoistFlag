@@ -28,6 +28,7 @@ var hoistFlag = {
 				$(".dialog1").show().siblings("img").hide()
 				$("#audio")[0].volume = 1
 				$("#audio")[0].play()
+				$(".dl").removeClass("dl-animate").css("top",'50px')
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
@@ -62,6 +63,7 @@ var hoistFlag = {
 		$("#audio")[0].volume = 0
 		$("#audio")[0].play()
 		$("#audio")[0].pause()
+		$(".dl").addClass("dl-animate")
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
 			recStart()	
