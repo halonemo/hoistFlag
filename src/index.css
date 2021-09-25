@@ -142,6 +142,7 @@ a:hover{
 	bottom:0;
 	left:50%;
 	transform: translateX(-50%);
+	z-index: 9;
 }
 .flag-wrap .flag{
 	position: absolute;
@@ -249,6 +250,19 @@ a:hover{
 	50%  {width: 80%;}
 	75%  {width: 90%;}
 	100% {width: 95%;}
+}
+#star-bg{
+	animation-name: staranimate;
+  	animation-duration: 1.5s;
+	animation-iteration-count:infinite;
+	animation-direction:reverse;
+	animation-timing-function:ease;
+	opacity: 0;
+}
+@keyframes staranimate {
+	0%   {opacity: 0;}
+	50%  {opacity: 1;}
+	100% {opacity: 0}
 }
 .dialog .loading-line .progress .icon{
 	width:20px;
