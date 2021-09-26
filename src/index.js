@@ -15,14 +15,17 @@ var hoistFlag = {
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
 		// bufferDuration+" / "+powerLevel;
 		console.log(powerLevel)
-		hoistFlag.siriGif()
-		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5 ){
+		// hoistFlag.siriGif()
+		// || powerLevel < 5 
+		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5  ){
 			return 
 		}
 		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
 			var num = powerLevel < 30 ? 5 : powerLevel / 5
 			hoistFlag.flagHeight = hoistFlag.flagHeight + num
 			$(".flag-wrap").css('height',hoistFlag.flagHeight)
+			hoistFlag.siriGif()
+			hoistFlag.siriGif()
 		}else{
 			if(hoistFlag.stepIndex === 0){
 				hoistFlag.stepIndex = 1
@@ -54,6 +57,8 @@ var hoistFlag = {
 				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
 				$(".bg-all").css('bottom',hoistFlag.bgStart)
+				hoistFlag.siriGif()
+				hoistFlag.siriGif()
 				// $(".dl").css('bottom',hoistFlag.bgStart)
 				// $(".galaxy-wrap").css('bottom',hoistFlag.bgStart)
 			}
