@@ -10,11 +10,13 @@ var hoistFlag = {
 	flagIndex:0,
 	stepIndex: 0,
 	microphone:false,
+	siriIndex:0,
+	siriOpen:0,
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
 		// bufferDuration+" / "+powerLevel;
 		console.log(powerLevel)
-		// || powerLevel < 5
-		if(hoistFlag.stop || hoistFlag.destroy ){
+		hoistFlag.siriGif()
+		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5 ){
 			return 
 		}
 		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
@@ -87,6 +89,14 @@ var hoistFlag = {
 			hoistFlag.flagGif()
 		}, 100);
 	},
+	siriGif(){
+		if(hoistFlag.siriIndex >= 69){
+			hoistFlag.siriIndex = 0
+		}else{
+			hoistFlag.siriIndex = hoistFlag.siriIndex + 1
+		}
+		$(".siri img").eq(hoistFlag.siriIndex).show().siblings().hide()
+	},
 	dataInit: function(){
 		hoistFlag.bgHeight = $("#basic-bg").height()
 		hoistFlag.itemHeight = hoistFlag.bgHeight / 4
@@ -106,6 +116,13 @@ var hoistFlag = {
 		$('body').on('reSize',function(){
 			hoistFlag.dataInit()
 		})
+		var siri = ""
+		for(let i = 1; i<= 69;i++){
+			siri += '<img src="./src/images/siri/'+ i +'.png">'
+		}
+		$(".touch-btn").append(siri).ready(function(){
+			hoistFlag.siriOpen = true
+		});
 		// $(".touch-btn").on("touchstart",function(event){
 		// 	// console.log(111)
 		// 	event.preventDefault();
