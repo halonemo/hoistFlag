@@ -412,3 +412,204 @@ a:hover{
 	90% {opacity: 1;left:5px;}
 	100% {transform: translate(0,-300%);}
 }
+.galaxy-wrap{
+	width:100%;
+	padding-top:223%;
+	position: absolute;
+    bottom: 0;
+    left: 0;
+	height:0;
+	transform: translateY(-283%);
+}
+/* 373 × 560 */
+.galaxy-wrap .galaxy0{
+	position: absolute;
+	bottom:0;
+	left:0;
+	width: 34.5%;
+	transform: translate(-25%,0);
+	animation-name: galaxy0;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy0 {
+	0% {left:0px;transform: translate(-25%,0);}
+	25%  {left:-20px;transform: translate(-25%,0) rotate(-10deg);}
+	50%  {left:0px;transform: translate(-25%,0) rotate(0deg);}
+	75%  {left:20px;transform: translate(-25%,0) rotate(10deg);}
+	100% {left:0px;transform: translate(-25%,0);}
+}
+/* 303 × 304 */
+.galaxy-wrap .galaxy1{
+	position: absolute;
+	top:0;
+	right:0;
+	width: 28%;
+	transform: translate(-45%,21%);
+	animation-name: galaxy1;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy1 {
+	0% {right:0px;transform: translate(-45%,21%);}
+	25%  {right:-20px;transform: translate(-45%,21%) rotate(-10deg);}
+	50%  {right:0px;transform: translate(-45%,21%) rotate(0deg);}
+	75%  {right:20px;transform: translate(-45%,21%) rotate(10deg);}
+	100% {right:0px;transform: translate(-45%,21%);}
+}
+/* 156 × 156 */
+.galaxy-wrap .galaxy2{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 14%;
+	transform: translate(76%,326%);
+	animation-name: galaxy2;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy2 {
+	0% {left:0px;transform: translate(76%,326%);}
+	25%  {left:-20px;transform: translate(76%,326%) rotate(-10deg);}
+	50%  {left:0px;transform: translate(76%,326%) rotate(0deg);}
+	75%  {left:20px;transform: translate(76%,326%) rotate(10deg);}
+	100% {left:0px;transform: translate(76%,326%);}
+}
+/* 229 × 229 */
+.galaxy-wrap .galaxy3{
+	position: absolute;
+	left:0;
+	bottom:0;
+	width: 21%;
+	transform: translate(81%,-287%);
+	animation-name: galaxy3;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy3 {
+	0% {left:0px;transform: translate(81%,-287%);}
+	25%  {left:-20px;transform: translate(81%,-287%) rotate(-10deg);}
+	50%  {left:0px;transform: translate(81%,-287%) rotate(0deg);}
+	75%  {left:20px;transform: translate(81%,-287%) rotate(10deg);}
+	100% {left:0px;transform: translate(81%,-287%);}
+}
+/* 517 × 517 */
+.galaxy-wrap .galaxy4{
+	position: absolute;
+	right:0;
+	bottom:0;
+	width: 48%;
+	transform: translate(30%,-54%);
+	animation-name: galaxy4;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy4 {
+	0% {right:0px;transform: translate(30%,-54%);}
+	25%  {right:-20px;transform: translate(30%,-54%) rotate(-10deg);}
+	50%  {right:0px;transform: translate(30%,-54%) rotate(0deg);}
+	75%  {right:20px;transform: translate(30%,-54%) rotate(10deg);}
+	100% {right:0px;transform: translate(30%,-54%);}
+}
+/* 74 × 73 */
+.galaxy-wrap .galaxy5{
+	position: absolute;
+	right:0;
+	bottom:0;
+	width: 6.9%;
+	transform: translate(-100%,-1954%);
+	animation-name: galaxy5;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy5 {
+	0% {right:0px;transform:translate(-100%,-1954%);}
+	25%  {right:-20px;transform:translate(-100%,-1954%) rotate(-10deg);}
+	50%  {right:0px;transform:translate(-100%,-1954%) rotate(0deg);}
+	75%  {right:20px;transform:translate(-100%,-1954%) rotate(10deg);}
+	100% {right:0px;transform:translate(-100%,-1954%);}
+}
+/* 1225 × 628 */
+/* 551 460 */
+.galaxy-wrap .galaxy6{
+	position: absolute;
+	top:0;
+	left:0;
+	width: 113%;
+	transform: translate(-55%,-26%);
+	animation-name: galaxy6;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy6 {
+	0% {left:0px;transform:translate(-55%,-26%);}
+	25%  {left:-20px;transform:translate(-55%,-26%) rotate(-10deg);}
+	50%  {left:0px;transform:translate(-55%,-26%) rotate(0deg);}
+	75%  {left:20px;transform:translate(-55%,-26%) rotate(10deg);}
+	100% {left:0px;transform:translate(-55%,-26%);}
+}
+/* 220 × 207 */
+.galaxy-wrap .galaxy7{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 20%;
+	transform: translate(200%,-37%);
+	animation-name: galaxy7;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy7 {
+	0% {left:0px;transform:translate(200%,-37%);}
+	25%  {left:-20px;transform:translate(200%,-37%) rotate(-10deg);}
+	50%  {left:0px;transform:translate(200%,-37%) rotate(0deg);}
+	75%  {left:20px;transform:translate(200%,-37%) rotate(10deg);}
+	100% {left:0px;transform:translate(200%,-37%);}
+}
+/* 867 × 633 */
+.galaxy-wrap .galaxy8{
+	position: absolute;
+	right:0;
+	top:0;
+	width: 80%;
+	transform: translate(54%,53%);
+	animation-name: galaxy8;
+	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy8 {
+	0% {right:0px;transform:translate(54%,53%);}
+	25%  {right:-20px;transform:translate(54%,53%) rotate(-10deg);}
+	50%  {right:0px;transform:translate(54%,53%) rotate(0deg);}
+	75%  {right:20px;transform:translate(54%,53%) rotate(10deg);}
+	100% {right:0px;transform:translate(54%,53%);}
+}
+/* 448 × 456 */
+.galaxy-wrap .galaxy9{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 41%;
+	transform: translate(-72%,206%);
+	animation-name: galaxy9;
+	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes galaxy9 {
+	0% {left:0px;transform: translate(-72%,206%);}
+	25%  {left:-20px;transform: translate(-72%,206%) rotate(-10deg);}
+	50%  {left:0px;transform: translate(-72%,206%) rotate(0deg);}
+	75%  {left:20px;transform: translate(-72%,206%) rotate(10deg);}
+	100% {left:0px;transform: translate(-72%,206%);}
+}
+/* 1080 2550 */
