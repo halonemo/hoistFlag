@@ -28,7 +28,6 @@ var hoistFlag = {
 				$(".dialog1").show().siblings("img").hide()
 				$("#audio")[0].volume = 1
 				$("#audio")[0].play()
-				$(".dl").removeClass("dl-animate").css("top",'50px')
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
@@ -52,6 +51,7 @@ var hoistFlag = {
 				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
 				$(".starry-bg").css('bottom',hoistFlag.bgStart)
+				$(".dl").css('bottom',hoistFlag.bgStart)
 			}
 		}
 	},
