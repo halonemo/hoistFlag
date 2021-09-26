@@ -31,18 +31,21 @@ var hoistFlag = {
 				$(".dialog1").show().siblings("img").hide()
 				$("#audio")[0].volume = 1
 				$("#audio")[0].play()
+				// 埋点60001 用户成功进入城市上空
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
 				$("#audio")[0].play()
+				// 埋点60002 用户成功进入璀璨星空
 			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
 				hoistFlag.stepIndex = 3
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog3").show().siblings("img").hide()
 				$("#audio")[0].play()
+				// 埋点60003 用户成功进入浩瀚银河
 			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
 				hoistFlag.stepIndex = 4
 				hoistFlag.destroy = true
@@ -50,6 +53,7 @@ var hoistFlag = {
 				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
 				$("#audio")[0].play()
+				// 埋点60004 用户成功进入无边宇宙
 			}else{
 				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
@@ -74,6 +78,7 @@ var hoistFlag = {
 		}else{
 			showDialog();
 		}
+		// 埋点50001 用户升起彩旗
 	},
 	recStart(){
 		recStart()	
@@ -123,15 +128,7 @@ var hoistFlag = {
 		$(".touch-btn").append(siri).ready(function(){
 			hoistFlag.siriOpen = true
 		});
-		// $(".touch-btn").on("touchstart",function(event){
-		// 	// console.log(111)
-		// 	event.preventDefault();
-		// 	recStart()
-		// })
-		// $(".touch-btn").on("touchend",function(event){
-		// 	// console.log(22)
-		// 	event.preventDefault();
-		// 	recPause()
-		// })
+		// 埋点20010 用户从加载页进入活动页
+		
 	}
 }
