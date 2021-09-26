@@ -19,46 +19,47 @@ var hoistFlag = {
 		// || powerLevel < 5 
 		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5  ){
 			return 
+		}else{
+			hoistFlag.siriGif()
 		}
 		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
 			var num = powerLevel < 30 ? 5 : powerLevel / 5
 			hoistFlag.flagHeight = hoistFlag.flagHeight + num
 			$(".flag-wrap").css('height',hoistFlag.flagHeight)
-			hoistFlag.siriGif()
-			hoistFlag.siriGif()
 		}else{
 			if(hoistFlag.stepIndex === 0){
 				hoistFlag.stepIndex = 1
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog1").show().siblings("img").hide()
-				$("#audio")[0].volume = 1
-				$("#audio")[0].play()
+				$(".bgaudio")[0].volume = 1
+				$(".bgaudio")[0].play()
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
-				$("#audio")[0].play()
+				$(".bgaudio")[1].volume = 1
+				$(".bgaudio")[1].play()
 			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
 				hoistFlag.stepIndex = 3
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog3").show().siblings("img").hide()
-				$("#audio")[0].play()
+				$(".bgaudio")[2].volume = 1
+				$(".bgaudio")[2].play()
 			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
 				hoistFlag.stepIndex = 4
 				hoistFlag.destroy = true
 				recPause && recPause()
 				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
-				$("#audio")[0].play()
+				$(".bgaudio")[3].volume = 1
+				$(".bgaudio")[3].play()
 			}else{
 				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
 				$(".bg-all").css('bottom',hoistFlag.bgStart)
-				hoistFlag.siriGif()
-				hoistFlag.siriGif()
 				// $(".dl").css('bottom',hoistFlag.bgStart)
 				// $(".galaxy-wrap").css('bottom',hoistFlag.bgStart)
 			}
@@ -69,9 +70,18 @@ var hoistFlag = {
 		hoistFlag.stop = false
 	},
 	start(){
-		$("#audio")[0].volume = 0
-		$("#audio")[0].play()
-		$("#audio")[0].pause()
+		$(".bgaudio")[0].volume = 0
+		$(".bgaudio")[0].play()
+		$(".bgaudio")[0].pause()
+		$(".bgaudio")[1].volume = 0
+		$(".bgaudio")[1].play()
+		$(".bgaudio")[1].pause()
+		$(".bgaudio")[2].volume = 0
+		$(".bgaudio")[2].play()
+		$(".bgaudio")[2].pause()
+		$(".bgaudio")[3].volume = 0
+		$(".bgaudio")[3].play()
+		$(".bgaudio")[3].pause()
 		$(".dl").addClass("dl-animate")
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
