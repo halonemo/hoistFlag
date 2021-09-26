@@ -414,12 +414,12 @@ a:hover{
 }
 .galaxy-wrap{
 	width:100%;
-	padding-top:223%;
+	padding-top:237%;
 	position: absolute;
     bottom: 0;
     left: 0;
 	height:0;
-	transform: translateY(-283%);
+	transform: translateY(-273%);
 }
 /* 373 × 560 */
 .galaxy-wrap .galaxy0{

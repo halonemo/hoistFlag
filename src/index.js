@@ -13,7 +13,8 @@ var hoistFlag = {
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
 		// bufferDuration+" / "+powerLevel;
 		console.log(powerLevel)
-		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5){
+		// || powerLevel < 5
+		if(hoistFlag.stop || hoistFlag.destroy ){
 			return 
 		}
 		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
@@ -52,6 +53,7 @@ var hoistFlag = {
 				hoistFlag.bgStart = hoistFlag.bgStart - num
 				$(".starry-bg").css('bottom',hoistFlag.bgStart)
 				$(".dl").css('bottom',hoistFlag.bgStart)
+				$(".galaxy-wrap").css('bottom',hoistFlag.bgStart)
 			}
 		}
 	},
