@@ -272,12 +272,18 @@ a:hover{
 	75%  {width: 70%;}
 	100% {width: 85%;}
 }
-#star-bg{
+.star-bg{
 	animation-name: staranimate;
   	animation-duration: 1.5s;
 	animation-iteration-count:infinite;
 	animation-timing-function:ease;
 	opacity: 0;
+}
+#star-bg2{
+	animation-delay:0.5s;
+}
+#star-bg3{
+	animation-delay:1s;
 }
 @keyframes staranimate {
 	0%   {opacity: 0;}
