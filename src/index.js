@@ -51,9 +51,9 @@ var hoistFlag = {
 			}else{
 				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
-				$(".starry-bg").css('bottom',hoistFlag.bgStart)
-				$(".dl").css('bottom',hoistFlag.bgStart)
-				$(".galaxy-wrap").css('bottom',hoistFlag.bgStart)
+				$(".bg-all").css('bottom',hoistFlag.bgStart)
+				// $(".dl").css('bottom',hoistFlag.bgStart)
+				// $(".galaxy-wrap").css('bottom',hoistFlag.bgStart)
 			}
 		}
 	},
@@ -88,7 +88,7 @@ var hoistFlag = {
 		}, 100);
 	},
 	dataInit: function(){
-		hoistFlag.bgHeight = $(".starry-bg").height()
+		hoistFlag.bgHeight = $("#basic-bg").height()
 		hoistFlag.itemHeight = hoistFlag.bgHeight / 4
 		hoistFlag.mainHeight = $(".main").height()
 		hoistFlag.flagHeight = hoistFlag.mainHeight / 2

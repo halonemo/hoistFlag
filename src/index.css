@@ -132,6 +132,15 @@ a:hover{
 	position: absolute;
 	bottom:0;
 	left:0;
+}
+.main #basic-bg{
+	position: static;
+}
+.main .bg-all{
+	width: 100%;
+	position: absolute;
+	bottom:0;
+	left:0;
 	transition: all 0.3s;
 }
 
@@ -613,3 +622,19 @@ a:hover{
 	100% {left:0px;transform: translate(-72%,206%);}
 }
 /* 1080 2550 */
+.meteor{
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top:25.19%;
+	animation-name: meteor;
+	animation-duration: 3s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes meteor {
+	0% {transform: translate(0,0);opacity: 0;}
+	20% {opacity: 1;}
+	80% {opacity: 1;}
+	100% {transform: translate(40px,40px);opacity: 0;}
+}
