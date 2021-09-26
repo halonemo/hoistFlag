@@ -247,9 +247,9 @@ a:hover{
 }
 @keyframes example {
 	0%   {width: 0;}
-	50%  {width: 80%;}
-	75%  {width: 90%;}
-	100% {width: 95%;}
+	50%  {width: 60%;}
+	75%  {width: 70%;}
+	100% {width: 85%;}
 }
 #star-bg{
 	animation-name: staranimate;
