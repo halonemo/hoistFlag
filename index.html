@@ -8,19 +8,29 @@
 	<title>OPPO</title>
 	<script src="./src/jquery.min.js"></script>
 	<script>
+		var loadNum = 0
 		function loadingStart() {
-			$(".loading-line").show()
-			$(".progress").addClass("animate")
-			$(".progress").width("100%")
+			loadNum = loadNum + 1
+			if(loadNum >= 7){
+				$(".loading-line").show()
+				$(".progress").addClass("animate")
+				$(".progress").width("100%")
+			}
 		}
 	</script>
 
 </head>
 
 <body onload="hoistFlag.init()">
-	<div class="dialog loading-dialog">
+	<div class="dialog loading-dialog" >
 		<div class="pic">
-			<img onload="loadingStart()" class="dialog1" src="./src/images/loading.png">
+			<img class="loading0" onload="loadingStart()" src="./src/images/loading/loading0.png">
+			<img class="loading1" onload="loadingStart()" src="./src/images/loading/loading1.png">
+			<img class="loading2" onload="loadingStart()" src="./src/images/loading/loading2.png">
+			<img class="loading3" onload="loadingStart()" src="./src/images/loading/loading3.png">
+			<img class="loading4" onload="loadingStart()" src="./src/images/loading/loading4.png">
+			<img class="loading5" onload="loadingStart()" src="./src/images/loading/loading5.png">
+			<img class="loading6" onload="loadingStart()" src="./src/images/loading/loading6.png">
 			<div class="loading-line">
 				<div class="progress">
 					<div class="icon">

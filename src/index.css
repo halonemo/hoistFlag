@@ -242,6 +242,15 @@ a:hover{
 	bottom:0;
 	transform: translate(-50%,140%);
 	display: none;
+	animation-name: loadingbtn;
+  	animation-duration: 1.5s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes loadingbtn {
+	0% {transform:translate(-50%,140%) scale(1);}
+	50% {transform:translate(-50%,140%) scale(0.8);}
+	100% {transform:translate(-50%,140%) scale(1);}
 }
 .dialog .loading-line{
 	width:39%;
@@ -263,7 +272,7 @@ a:hover{
 }
 .dialog .loading-line .progress.animate{
 	animation-name: example;
-  	animation-duration: 3s;
+  	animation-duration: 10s;
 }
 @keyframes example {
 	0%   {width: 0;}
@@ -805,3 +814,93 @@ a:hover{
 }
 
 /* 1080 9600 */
+
+.loading-dialog .loading0{
+	width: 100%;
+}
+/* 139 × 115 */
+/* 134 264 */
+.loading-dialog .loading1{
+	width: 12.8%;
+	position: absolute;
+	left:12.4%;
+	bottom:39.4%;
+	z-index: 1;
+	animation-name: loading1;
+  	animation-duration: 1.5s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes loading1 {
+	0% {transform: rotate(0deg);}
+	50% {transform: rotate(30deg);}
+	100% {transform:rotate(0deg);;}
+}
+/* 107 × 100 */
+/* 146 306 */
+.loading-dialog .loading2{
+	width: 10%;
+	position: absolute;
+	right:13.5%;
+	bottom:45.7%;
+	z-index: 1;
+	animation-name: loading1;
+  	animation-duration: 1.5s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+/* 114 × 98 */
+/* 149 149 */
+.loading-dialog .loading3{
+	width: 10.5%;
+	position: absolute;
+	left:13.7%;
+	bottom:21.7%;
+	z-index: 1;
+	animation-name: loading2;
+  	animation-duration: 1.5s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+/* 141 × 117 */
+/* 117 188 */
+.loading-dialog .loading4{
+	width: 13%;
+	position: absolute;
+	right:10.8%;
+	bottom:28%;
+	z-index: 1;
+	animation-name: loading2;
+  	animation-duration: 1.5s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes loading2 {
+	0% {transform: rotate(0deg);}
+	50% {transform: rotate(-30deg);}
+	100% {transform:rotate(0deg);;}
+}
+.loading-dialog .loading5{
+	width: 100%;
+	position: absolute;
+	left:0;
+	top:-10%;
+	animation-name: loading5;
+  	animation-duration: 3s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes loading5 {
+	0% {transform: translateY(0)}
+	25% {transform:  translateY(10px)}
+	50% {transform:  translateY(0)}
+	75% {transform:  translateY(-10px)}
+	100% {transform: translateY(0)}
+}
+.loading-dialog .loading6{
+	width: 100%;
+	position: absolute;
+	left:0;
+	top:0;
+}
+/* 1080 670 */
