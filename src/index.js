@@ -33,6 +33,7 @@ var hoistFlag = {
 				$(".step-dialog").show()
 				$(".dialog1").show().siblings("img").hide()
 				// 埋点60001 用户成功进入城市上空
+				hoistFlag.statistics("60001")
 				$(".bgaudio")[0].volume = 1
 				$(".bgaudio")[0].play()
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
@@ -41,6 +42,7 @@ var hoistFlag = {
 				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
 				// 埋点60002 用户成功进入璀璨星空
+				hoistFlag.statistics("60002")
 				$(".bgaudio")[1].volume = 1
 				$(".bgaudio")[1].play()
 			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
@@ -49,6 +51,7 @@ var hoistFlag = {
 				$(".step-dialog").show()
 				$(".dialog3").show().siblings("img").hide()
 				// 埋点60003 用户成功进入浩瀚银河
+				hoistFlag.statistics("60003")
 				$(".bgaudio")[2].volume = 1
 				$(".bgaudio")[2].play()
 			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
@@ -58,6 +61,7 @@ var hoistFlag = {
 				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
 				// 埋点60004 用户成功进入无边宇宙
+				hoistFlag.statistics("60004")
 				$(".bgaudio")[3].volume = 1
 				$(".bgaudio")[3].play()
 			}else{
@@ -94,6 +98,7 @@ var hoistFlag = {
 			showDialog();
 		}
 		// 埋点50001 用户升起彩旗
+		hoistFlag.statistics("50001")
 	},
 	recStart(){
 		recStart()	
@@ -125,6 +130,15 @@ var hoistFlag = {
 		hoistFlag.flagMaxHeight = hoistFlag.mainHeight * 0.75
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
+	statistics(eventID){
+		$.post("http://stat-dcs-dc-test.wanyol.com/stat/dcs",
+			JSON.stringify({
+				logTag: "20184_National_Day_game", //业务id
+				eventID: eventID, //事件id
+				appId: 20184
+			})
+		);
+	},
 	init: function(){
 		hoistFlag.flagGif()
 		recOpen()
@@ -143,15 +157,11 @@ var hoistFlag = {
 		$(".touch-btn").append(siri).ready(function(){
 			hoistFlag.siriOpen = true
 		});
-		// 埋点20010 用户从加载页进入活动页
-		$.post("http://stat-dcs-dc-test.wanyol.com/stat/dcs",
-		JSON.stringify({
-			logTag: "20184_National_Day_game", //业务id
-			eventID: "20010", //事件id
-			appId: 20184
-		}),
-		function(data){
-			// alert("Data Loaded: " + data);
-		});
+		hoistFlag.statistics("80001")
 	}
 }
+hoistFlag.statistics("20011")
+window.onbeforeunload = function(event) {
+	hoistFlag.statistics("80002")
+	// hoistFlag.statistics("80003")
+ }
