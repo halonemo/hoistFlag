@@ -32,51 +32,34 @@ var hoistFlag = {
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog1").show().siblings("img").hide()
-<<<<<<< HEAD
-				$("#audio")[0].volume = 1
-				$("#audio")[0].play()
 				// 埋点60001 用户成功进入城市上空
-=======
 				$(".bgaudio")[0].volume = 1
 				$(".bgaudio")[0].play()
->>>>>>> 37b1728c011f2f2e25ce2cb95fca0f259cafcf8f
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
-<<<<<<< HEAD
-				$("#audio")[0].play()
 				// 埋点60002 用户成功进入璀璨星空
-=======
 				$(".bgaudio")[1].volume = 1
 				$(".bgaudio")[1].play()
->>>>>>> 37b1728c011f2f2e25ce2cb95fca0f259cafcf8f
 			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
 				hoistFlag.stepIndex = 3
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog3").show().siblings("img").hide()
-<<<<<<< HEAD
-				$("#audio")[0].play()
 				// 埋点60003 用户成功进入浩瀚银河
-=======
 				$(".bgaudio")[2].volume = 1
 				$(".bgaudio")[2].play()
->>>>>>> 37b1728c011f2f2e25ce2cb95fca0f259cafcf8f
 			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
 				hoistFlag.stepIndex = 4
 				hoistFlag.destroy = true
 				recPause && recPause()
 				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
-<<<<<<< HEAD
-				$("#audio")[0].play()
 				// 埋点60004 用户成功进入无边宇宙
-=======
 				$(".bgaudio")[3].volume = 1
 				$(".bgaudio")[3].play()
->>>>>>> 37b1728c011f2f2e25ce2cb95fca0f259cafcf8f
 			}else{
 				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
@@ -168,7 +151,7 @@ var hoistFlag = {
 			appId: 20184
 		}),
 		function(data){
-			alert("Data Loaded: " + data);
+			// alert("Data Loaded: " + data);
 		});
 	}
 }
