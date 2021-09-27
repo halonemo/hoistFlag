@@ -186,13 +186,15 @@ a:hover{
 	animation-name: flag;
 	animation-duration: 2s;
 	animation-timing-function:linear;
+	animation-fill-mode:forwards;
+
 }
 .stopAnimate{
 	animation-play-state:paused
 }
 @keyframes flag {
 	from {height:50vh}
-	to {height: 75vh}
+	to {height: 90vh}
 }
 .flag-wrap .flag{
 	position: absolute;
