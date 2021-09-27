@@ -181,8 +181,8 @@ a:hover{
 	background-repeat: repeat-y;
 }
 .touch-btn{
-	width: 60px;
-	height:60px;
+	width: 25vw;
+	height:25vw;
 	position: absolute;
 	left: 50%;
 	bottom:3%;
@@ -237,11 +237,11 @@ a:hover{
 	transform: translateX(-50%);
 }
 .dialog .loading-btn{
-	width:100px;
+	width:50%;
 	position: absolute;
 	left:50%;
 	bottom:0;
-	transform: translate(-50%,150%);
+	transform: translate(-50%,140%);
 	display: none;
 }
 .dialog .loading-line{
