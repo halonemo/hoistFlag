@@ -208,7 +208,7 @@ a:hover{
 	left:0;
 	top:50%;
 	z-index: 11111;
-	transform: translate(0,-50%);
+	transform: translate(0,-60%);
 	width: 100%;
 	height:100%;
 	max-width: 700px;
@@ -308,6 +308,9 @@ a:hover{
 .step-dialog img{
 	display: none;
 }
+.dl{
+	transition: all 20s;
+}
 .dl0{
 	width: 11%;
 	display: block;
@@ -359,6 +362,7 @@ a:hover{
 .dl-animate{
 	animation-timing-function:linear;
 	animation-fill-mode:forwards;
+	animation-iteration-count:infinite;
 }
 .dl0.dl-animate{
 	/* opacity: 0; */
@@ -394,18 +398,18 @@ a:hover{
 	60% {opacity: 1;left:5px;}
 	80% {opacity: 1;left:0px;}
 	90% {opacity: 1;left:5px;}
-	100% {opacity:0;opacity: 1;transform: translate(205%,-1030%);}
+	100% {opacity:0;opacity: 1;left:0;}
 }
 @keyframes dl1 {
 	0% {left:0;margin-right: 0;}
-	5% {opacity: 1;left:0px;}
-	10% {opacity: 1;left:3px;}
-	20% {opacity: 1;left:0px;}
-	40% {opacity: 1;left:3px;}
-	60% {opacity: 1;left:0px;}
-	80% {opacity: 1;left:3px;}
-	90% {opacity: 1;left:0px;}
-	100% {opacity:0;opacity: 1;transform: translate(140%,-1210%);}
+	5% {opacity: 1;left:5px;}
+	10% {opacity: 1;left:0px;}
+	20% {opacity: 1;left:5px;}
+	40% {opacity: 1;left:0px;}
+	60% {opacity: 1;left:5px;}
+	80% {opacity: 1;left:0px;}
+	90% {opacity: 1;left:5px;}
+	100% {opacity:0;opacity: 1;left:0;}
 }
 @keyframes dl2 {
 	0% {left:0;margin-right: 0;}
@@ -417,7 +421,7 @@ a:hover{
 	60% {opacity: 1;left:6px;}
 	80% {opacity: 1;left:0px;}
 	90% {opacity: 1;left:6px;}
-	100% {opacity:0;opacity: 1;transform: translate(795%,-1365%);}
+	100% {opacity:0;opacity: 1;left:0;}
 }
 @keyframes dl3 {
 	0% {left:0;margin-right: 0;}
@@ -429,7 +433,7 @@ a:hover{
 	60% {opacity: 1;left:5px;}
 	80% {opacity: 1;left:0px;}
 	90% {opacity: 1;left:5px;}
-	100% {opacity:0;opacity: 1;transform: translate(2630%,-2650%);}
+	100% {opacity:0;opacity: 1;left:0;}
 }
 @keyframes dl4 {
 	0% {left:0;margin-right: 0;}
@@ -441,7 +445,7 @@ a:hover{
 	60% {opacity: 1;left:5px;}
 	80% {opacity: 1;left:0px;}
 	90% {opacity: 1;left:5px;}
-	100% {opacity:0;opacity: 1;transform: translate(0,-300%);}
+	100% {opacity:0;opacity: 1;left:0;}
 }
 .galaxy-wrap{
 	width:100%;

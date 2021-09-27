@@ -86,7 +86,7 @@ var hoistFlag = {
 		$(".bgaudio")[3].volume = 0
 		$(".bgaudio")[3].play()
 		$(".bgaudio")[3].pause()
-		$(".dl").addClass("dl-animate")
+		$(".dl").addClass("dl-animate").css("bottom",'50vh')
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
 			recStart()	
