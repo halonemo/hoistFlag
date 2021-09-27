@@ -622,11 +622,11 @@ a:hover{
 	animation-timing-function:linear;
 }
 @keyframes galaxy8 {
-	0% {right:0px;transform:translate(54%,53%);}
-	25%  {right:-20px;transform:translate(54%,53%) rotate(-10deg);}
-	50%  {right:0px;transform:translate(54%,53%) rotate(0deg);}
-	75%  {right:20px;transform:translate(54%,53%) rotate(10deg);}
-	100% {right:0px;transform:translate(54%,53%);}
+	0% {top:0px;transform:translate(54%,53%);}
+	25%  {top:-20px;transform:translate(54%,53%) rotate(-6deg);}
+	50%  {top:0px;transform:translate(54%,53%) rotate(0deg);}
+	75%  {top:20px;transform:translate(54%,53%) rotate(3deg);}
+	100% {top:0px;transform:translate(54%,53%);}
 }
 /* 448 × 456 */
 .galaxy-wrap .galaxy9{
