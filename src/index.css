@@ -54,7 +54,6 @@ html,body{
 	height:100%;
 	width:100%;
 	overflow: hidden;
-	background:#000;
 }
 pre{
 	white-space:pre-wrap;
@@ -181,8 +180,8 @@ a:hover{
 	background-repeat: repeat-y;
 }
 .touch-btn{
-	width: 25vw;
-	height:25vw;
+	width: 22vw;
+	height:22vw;
 	position: absolute;
 	left: 50%;
 	bottom:3%;
@@ -732,4 +731,77 @@ a:hover{
 	90% {width: 18vw;opacity: 0;}
 	100% {width: 18vw;opacity: 0;}
 }
-/* 1080 2550 */
+
+.milkyway-wrap{
+	width:100%;
+}
+/* 141 × 149 */
+.milkyway{
+	position: absolute;
+}
+.milkyway0{
+	position: absolute;
+	bottom:47.9%;
+	left:19%;
+	width: 13%;
+	animation-name: milkyway0;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes milkyway0 {
+	0% {transform: translate(0,0) rotate(0deg);}
+	25%  {transform: translate(10px,0) rotate(-10deg);}
+	50%  {transform: translate(0,0) rotate(0deg);}
+	75%  {transform: translate(-10px,0) rotate(10deg);}
+	100% {transform: translate(0,0) rotate(0deg);}
+}
+/* 207 × 216 */
+.milkyway1{
+	position: absolute;
+	bottom:51%;
+	left:18.7%;
+	width: 19%;
+	animation-name: milkyway1;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes milkyway1 {
+	0% {transform: translate(0,0);}
+	50% {transform: translate(40px,40px);}
+	100% {transform: translate(0,0);}
+}
+/* 566 × 572 */
+.milkyway2{
+	position: absolute;
+	bottom:67%;
+	left:20%;
+	width: 52%;
+	animation-name: milkyway2;
+  	animation-duration: 6s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes milkyway2 {
+	0% {transform: translate(0,0);}
+	50% {transform: translate(60px,40px) rotate(-20deg);}
+	100% {transform: translate(0,0);}
+}
+.milkyway3{
+	position: absolute;
+	bottom: 55.9%;
+    left: 0;
+    width: 100%;
+	animation-name: milkyway3;
+  	animation-duration: 1s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+}
+@keyframes milkyway3 {
+	0% {opacity: 1;}
+	50% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+/* 1080 9600 */
