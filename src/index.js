@@ -129,6 +129,14 @@ var hoistFlag = {
 			hoistFlag.siriOpen = true
 		});
 		// 埋点20010 用户从加载页进入活动页
-		
+		$.post("http://stat-dcs-dc-test.wanyol.com/stat/dcs",
+		JSON.stringify({
+			logTag: "20184_National_Day_game", //业务id
+			eventID: "20010", //事件id
+			appId: 20184
+		}),
+		function(data){
+			alert("Data Loaded: " + data);
+		});
 	}
 }
