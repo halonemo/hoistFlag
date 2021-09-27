@@ -130,14 +130,17 @@ var hoistFlag = {
 		hoistFlag.flagMaxHeight = hoistFlag.mainHeight * 0.75
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
-	statistics(eventID){
-		$.post("http://stat-dcs-dc-test.wanyol.com/stat/dcs",
-			JSON.stringify({
-				logTag: "20184_National_Day_game", //业务id
-				eventID: eventID, //事件id
-				appId: 20184
-			})
-		);
+	statistics(eventID,logMap){
+		var param = {
+			logTag: "20184_National_Day_game", //业务id
+			eventID: eventID, //事件id
+			appId: 20184
+		}
+		if(logMap){param.logMap = logMap}
+		var jsonStr = JSON.stringify(param)
+		$.post("http://stat-dcs-dc-test.wanyol.com/stat/dcs",jsonStr,function(){
+			console.log('调用成功')
+		});
 	},
 	init: function(){
 		hoistFlag.flagGif()
@@ -161,7 +164,9 @@ var hoistFlag = {
 	}
 }
 hoistFlag.statistics("20011")
+hoistFlag.startTime = (new Date()).getTime()
 window.onbeforeunload = function(event) {
 	hoistFlag.statistics("80002")
-	// hoistFlag.statistics("80003")
+	var endTime = (new Date()).getTime() - hoistFlag.startTime 
+	hoistFlag.statistics("80003",{time:endTime})
  }
