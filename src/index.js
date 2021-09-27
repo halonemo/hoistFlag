@@ -157,7 +157,7 @@ var hoistFlag = {
 		for(let i = 1; i<= 69;i++){
 			siri += '<img src="./src/images/siri/'+ i +'.png">'
 		}
-		$(".touch-btn").append(siri).ready(function(){
+		$(".siri").append(siri).ready(function(){
 			hoistFlag.siriOpen = true
 		});
 		hoistFlag.statistics("80001")
