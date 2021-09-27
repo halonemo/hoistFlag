@@ -140,7 +140,36 @@ a:hover{
 	position: absolute;
 	bottom:0;
 	left:0;
-	transition: all 0.3s;
+	transition: all 7s linear;
+	animation-duration: 7s;
+	animation-timing-function:linear;
+}
+.bg-all.animateAll1{
+	animation-name: all1;
+}
+.bg-all.animateAll2{
+	bottom: calc(-222vw);
+	animation-name: all2;
+}
+.bg-all.animateAll3{
+	bottom: calc(-444vw);
+	animation-name: all3;
+}
+.bg-all.animateAll4{
+	bottom: calc(-666vw);
+	animation-name: all4;
+}
+@keyframes all1 {
+	from {bottom:0}
+	to {bottom: calc(-222vw)}
+}
+@keyframes all2{
+	from {bottom: calc(-222vw)}
+	to {bottom: calc(-444vw)}
+}
+@keyframes all3 {
+	from {bottom: calc(-444vw)}
+	to {bottom: calc(-666vw)}
 }
 
 .flag-wrap{
@@ -151,6 +180,19 @@ a:hover{
 	left:50%;
 	transform: translateX(-50%);
 	z-index: 9;
+	/* transition: height 2s; */
+}
+.flag-wrap.animate2{
+	animation-name: flag;
+	animation-duration: 2s;
+	animation-timing-function:linear;
+}
+.stopAnimate{
+	animation-play-state:paused
+}
+@keyframes flag {
+	from {height:50vh}
+	to {height: 75vh}
 }
 .flag-wrap .flag{
 	position: absolute;
@@ -187,6 +229,7 @@ a:hover{
 	z-index: 10;
 	width: 34vw;
 	transform: translate(30%,-50%);
+	display: none;
 }
 .touch-btn{
 	width: 22vw;
@@ -243,6 +286,7 @@ a:hover{
 	left:50%;
 	bottom: -50px;
 	transform: translateX(-50%);
+	display: none;
 }
 .dialog .loading-btn{
 	width:50%;
@@ -325,7 +369,7 @@ a:hover{
 .step-dialog img{
 	display: none;
 }
-.dl{
+.dl.transition{
 	transition: all 20s;
 }
 .dl0{

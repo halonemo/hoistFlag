@@ -12,70 +12,100 @@ var hoistFlag = {
 	microphone:false,
 	siriIndex:0,
 	siriOpen:0,
+	mute:0,
+	timeout:null,
+	interval:null,
+	animateStart:false,
+	tipNum:0,
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
 		// bufferDuration+" / "+powerLevel;
-		console.log(powerLevel)
-		// hoistFlag.siriGif()
+		console.log('powerLevel' + powerLevel)
 		// || powerLevel < 5 
 		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5  ){
+			hoistFlag.mute = hoistFlag.mute + 1
+			if(hoistFlag.mute === 30){
+				hoistFlag.stopAnimate()
+			}
+			console.log('mute'+hoistFlag.mute)
 			return 
 		}else{
-			hoistFlag.siriGif()
+			hoistFlag.mute = 0
+			console.log('mute'+hoistFlag.mute)
 		}
-		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
-			var num = powerLevel < 30 ? 5 : powerLevel / 5
-			hoistFlag.flagHeight = hoistFlag.flagHeight + num
-			$(".flag-wrap").css('height',hoistFlag.flagHeight)
-		}else{
-			if(hoistFlag.stepIndex === 0){
-				hoistFlag.stepIndex = 1
-				hoistFlag.stop = true
-				$(".step-dialog").show()
-				$(".dialog1").show().siblings("img").hide()
-				// 埋点60001 用户成功进入城市上空
-				hoistFlag.statistics("60001")
-				$(".bgaudio")[0].volume = 1
-				$(".bgaudio")[0].play()
-			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
+		if(!hoistFlag.animateStart){
+			// hoistFlag.animate()
+		}
+		return false
+	},
+	stopAnimate(){
+		hoistFlag.timeout && clearTimeout(hoistFlag.timeout)
+		$(".dialog .close").show()
+		$(".animate2").addClass("stopAnimate")
+		$(".bg-all").addClass("stopAnimate")
+		if(hoistFlag.stepIndex === 0){
+			$(".step-dialog").show()
+			$(".dialog1").show().siblings("img").hide()
+		}
+		hoistFlag.interval && clearInterval(hoistFlag.interval)
+		$(".siri img").eq(0).show().siblings().hide()
+	},
+	animate(){
+		hoistFlag.interval = setInterval(() => {
+			hoistFlag.siriGif()
+		}, 100);
+		hoistFlag.animateStart = true
+		hoistFlag.stepIndex = 0
+		$(".flag-wrap").addClass("animate2")
+		hoistFlag.timeout = setTimeout(() => {
+			hoistFlag.stepIndex = 1
+			$(".step-dialog").show()
+			$(".dialog1").show().siblings("img").hide()
+			// 埋点60001 用户成功进入城市上空
+			hoistFlag.statistics("60001")
+			$(".bgaudio")[0].volume = 1
+			$(".bgaudio")[0].play()
+			$(".bg-all").addClass("animateAll1")
+			hoistFlag.timeout = setTimeout(() => {
 				hoistFlag.stepIndex = 2
-				hoistFlag.stop = true
-				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
 				// 埋点60002 用户成功进入璀璨星空
 				hoistFlag.statistics("60002")
 				$(".bgaudio")[1].volume = 1
 				$(".bgaudio")[1].play()
-			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
-				hoistFlag.stepIndex = 3
-				hoistFlag.stop = true
-				$(".step-dialog").show()
-				$(".dialog3").show().siblings("img").hide()
-				// 埋点60003 用户成功进入浩瀚银河
-				hoistFlag.statistics("60003")
-				$(".bgaudio")[2].volume = 1
-				$(".bgaudio")[2].play()
-			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
-				hoistFlag.stepIndex = 4
-				hoistFlag.destroy = true
-				recPause && recPause()
-				$(".step-dialog").show()
-				$(".dialog4").show().siblings("img").hide()
-				// 埋点60004 用户成功进入无边宇宙
-				hoistFlag.statistics("60004")
-				$(".bgaudio")[3].volume = 1
-				$(".bgaudio")[3].play()
-			}else{
-				var num = powerLevel < 40 ? 10 : powerLevel / 2
-				hoistFlag.bgStart = hoistFlag.bgStart - num
-				$(".bg-all").css('bottom',hoistFlag.bgStart)
-				// $(".dl").css('bottom',hoistFlag.bgStart)
-				// $(".galaxy-wrap").css('bottom',hoistFlag.bgStart)
-			}
-		}
+				$(".bg-all").addClass("animateAll2")
+				hoistFlag.timeout = setTimeout(() => {
+					hoistFlag.stepIndex = 3
+					$(".dialog3").show().siblings("img").hide()
+					// 埋点60003 用户成功进入浩瀚银河
+					hoistFlag.statistics("60003")
+					$(".bgaudio")[2].volume = 1
+					$(".bgaudio")[2].play()
+					$(".bg-all").addClass("animateAll3")
+					hoistFlag.timeout = setTimeout(() => {
+						hoistFlag.stepIndex = 4
+						$(".dialog4").show().siblings("img").hide()
+						// 埋点60004 用户成功进入无边宇宙
+						hoistFlag.statistics("60004")
+						$(".bgaudio")[3].volume = 1
+						$(".bgaudio")[3].play()
+						$(".bg-all").addClass("animateAll4")
+						$(".dialog .close").show()
+					},7000)
+				},7000)
+			},7000)
+		}, 2000);
 	},
 	close(){
 		$(".step-dialog").hide()
 		hoistFlag.stop = false
+		$(".loading-btn").show()
+		$(".bg-all").attr("class",'bg-all')
+		$(".step-dialog").hide()
+		$(".loading-btn").show()
+		$(".loading-dialog").show()
+		$(".flag-wrap").height("50%").attr('class','flag-wrap')
+		$(".dl").removeClass("transition").css("bottom",'0')
+		$(".dialog .close").hide()
 	},
 	start(){
 		$(".bgaudio")[0].volume = 0
@@ -90,7 +120,7 @@ var hoistFlag = {
 		$(".bgaudio")[3].volume = 0
 		$(".bgaudio")[3].play()
 		$(".bgaudio")[3].pause()
-		$(".dl").addClass("dl-animate").css("bottom",'50vh')
+		$(".dl").addClass("transition").css("bottom",'50vh')
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
 			recStart()	
@@ -99,6 +129,15 @@ var hoistFlag = {
 		}
 		// 埋点50001 用户升起彩旗
 		hoistFlag.statistics("50001")
+		if(hoistFlag.tipNum < 1){
+			$(".touch-btn .tip").fadeIn()
+		}
+		hoistFlag.tipNum = hoistFlag.tipNum + 1
+		setTimeout(() => {
+			$(".touch-btn .tip").fadeOut()
+		}, 4000);
+		hoistFlag.animate()
+		hoistFlag.mute = 0
 	},
 	recStart(){
 		recStart()	
