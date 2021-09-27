@@ -15,9 +15,12 @@ var hoistFlag = {
 	recCallback: function(buffers,powerLevel,bufferDuration,bufferSampleRate,newBufferIdx,asyncEnd){
 		// bufferDuration+" / "+powerLevel;
 		console.log(powerLevel)
-		hoistFlag.siriGif()
-		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5 ){
+		// hoistFlag.siriGif()
+		// || powerLevel < 5 
+		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5  ){
 			return 
+		}else{
+			hoistFlag.siriGif()
 		}
 		if(hoistFlag.flagHeight < hoistFlag.flagMaxHeight){
 			var num = powerLevel < 30 ? 5 : powerLevel / 5
@@ -29,31 +32,51 @@ var hoistFlag = {
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog1").show().siblings("img").hide()
+<<<<<<< HEAD
 				$("#audio")[0].volume = 1
 				$("#audio")[0].play()
 				// 埋点60001 用户成功进入城市上空
+=======
+				$(".bgaudio")[0].volume = 1
+				$(".bgaudio")[0].play()
+>>>>>>> 37b1728c011f2f2e25ce2cb95fca0f259cafcf8f
 			}else if(hoistFlag.stepIndex === 1 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 1){
 				hoistFlag.stepIndex = 2
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog2").show().siblings("img").hide()
+<<<<<<< HEAD
 				$("#audio")[0].play()
 				// 埋点60002 用户成功进入璀璨星空
+=======
+				$(".bgaudio")[1].volume = 1
+				$(".bgaudio")[1].play()
+>>>>>>> 37b1728c011f2f2e25ce2cb95fca0f259cafcf8f
 			}else if(hoistFlag.stepIndex === 2 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 2){
 				hoistFlag.stepIndex = 3
 				hoistFlag.stop = true
 				$(".step-dialog").show()
 				$(".dialog3").show().siblings("img").hide()
+<<<<<<< HEAD
 				$("#audio")[0].play()
 				// 埋点60003 用户成功进入浩瀚银河
+=======
+				$(".bgaudio")[2].volume = 1
+				$(".bgaudio")[2].play()
+>>>>>>> 37b1728c011f2f2e25ce2cb95fca0f259cafcf8f
 			}else if(hoistFlag.stepIndex === 3 && Math.abs(hoistFlag.bgStart) >= hoistFlag.itemHeight * 3){
 				hoistFlag.stepIndex = 4
 				hoistFlag.destroy = true
 				recPause && recPause()
 				$(".step-dialog").show()
 				$(".dialog4").show().siblings("img").hide()
+<<<<<<< HEAD
 				$("#audio")[0].play()
 				// 埋点60004 用户成功进入无边宇宙
+=======
+				$(".bgaudio")[3].volume = 1
+				$(".bgaudio")[3].play()
+>>>>>>> 37b1728c011f2f2e25ce2cb95fca0f259cafcf8f
 			}else{
 				var num = powerLevel < 40 ? 10 : powerLevel / 2
 				hoistFlag.bgStart = hoistFlag.bgStart - num
@@ -68,9 +91,18 @@ var hoistFlag = {
 		hoistFlag.stop = false
 	},
 	start(){
-		$("#audio")[0].volume = 0
-		$("#audio")[0].play()
-		$("#audio")[0].pause()
+		$(".bgaudio")[0].volume = 0
+		$(".bgaudio")[0].play()
+		$(".bgaudio")[0].pause()
+		$(".bgaudio")[1].volume = 0
+		$(".bgaudio")[1].play()
+		$(".bgaudio")[1].pause()
+		$(".bgaudio")[2].volume = 0
+		$(".bgaudio")[2].play()
+		$(".bgaudio")[2].pause()
+		$(".bgaudio")[3].volume = 0
+		$(".bgaudio")[3].play()
+		$(".bgaudio")[3].pause()
 		$(".dl").addClass("dl-animate")
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
