@@ -23,7 +23,7 @@ var hoistFlag = {
 		// || powerLevel < 5 
 		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5  ){
 			hoistFlag.mute = hoistFlag.mute + 1
-			if(hoistFlag.mute === 30){
+			if(hoistFlag.mute === 20){
 				hoistFlag.stopAnimate()
 			}
 			console.log('mute'+hoistFlag.mute)
@@ -89,6 +89,7 @@ var hoistFlag = {
 						$(".bgaudio")[3].volume = 1
 						$(".bgaudio")[3].play()
 						$(".bg-all").addClass("animateAll4")
+						hoistFlag.stopAnimate()
 						$(".dialog .close").show()
 					},7000)
 				},7000)
@@ -108,18 +109,25 @@ var hoistFlag = {
 		$(".dialog .close").hide()
 	},
 	start(){
-		$(".bgaudio")[0].volume = 0
-		$(".bgaudio")[0].play()
-		$(".bgaudio")[0].pause()
-		$(".bgaudio")[1].volume = 0
-		$(".bgaudio")[1].play()
-		$(".bgaudio")[1].pause()
-		$(".bgaudio")[2].volume = 0
-		$(".bgaudio")[2].play()
-		$(".bgaudio")[2].pause()
-		$(".bgaudio")[3].volume = 0
-		$(".bgaudio")[3].play()
-		$(".bgaudio")[3].pause()
+		if(hoistFlag.tipNum < 1){
+			$(".bgaudio")[0].volume = 0
+			$(".bgaudio")[0].play()
+			$(".bgaudio")[0].pause()
+			$(".bgaudio")[1].volume = 0
+			$(".bgaudio")[1].play()
+			$(".bgaudio")[1].pause()
+			$(".bgaudio")[2].volume = 0
+			$(".bgaudio")[2].play()
+			$(".bgaudio")[2].pause()
+			$(".bgaudio")[3].volume = 0
+			$(".bgaudio")[3].play()
+			$(".bgaudio")[3].pause()
+			$(".touch-btn .tip").fadeIn()
+		}
+		hoistFlag.tipNum = hoistFlag.tipNum + 1
+		setTimeout(() => {
+			$(".touch-btn .tip").fadeOut()
+		}, 4000);
 		$(".dl").addClass("transition").css("bottom",'50vh')
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
@@ -129,13 +137,6 @@ var hoistFlag = {
 		}
 		// 埋点50001 用户升起彩旗
 		hoistFlag.statistics("50001")
-		if(hoistFlag.tipNum < 1){
-			$(".touch-btn .tip").fadeIn()
-		}
-		hoistFlag.tipNum = hoistFlag.tipNum + 1
-		setTimeout(() => {
-			$(".touch-btn .tip").fadeOut()
-		}, 4000);
 		hoistFlag.animate()
 		hoistFlag.mute = 0
 	},
