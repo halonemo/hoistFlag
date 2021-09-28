@@ -21,7 +21,7 @@ var hoistFlag = {
 		// bufferDuration+" / "+powerLevel;
 		console.log('powerLevel' + powerLevel)
 		// || powerLevel < 5 
-		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 5  ){
+		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 3  ){
 			hoistFlag.mute = hoistFlag.mute + 1
 			if(hoistFlag.mute === 20){
 				hoistFlag.stopAnimate()
@@ -40,6 +40,7 @@ var hoistFlag = {
 	stopAnimate(){
 		hoistFlag.timeout && clearTimeout(hoistFlag.timeout)
 		$(".dialog .close").show()
+		$(".step-dialog").removeClass("scale")
 		$(".animate2").addClass("stopAnimate")
 		$(".bg-all").addClass("stopAnimate")
 		if(hoistFlag.stepIndex === 0){
@@ -91,6 +92,7 @@ var hoistFlag = {
 						$(".bg-all").addClass("animateAll4")
 						hoistFlag.stopAnimate()
 						$(".dialog .close").show()
+						$(".step-dialog").removeClass("scale")
 					},7000)
 				},7000)
 			},7000)
@@ -107,6 +109,7 @@ var hoistFlag = {
 		$(".flag-wrap").height("50%").attr('class','flag-wrap')
 		$(".dl").removeClass("transition").css("bottom",'0')
 		$(".dialog .close").hide()
+		$(".step-dialog").addClass("scale")
 	},
 	start(){
 		$(".loadingaudio")[0].pause && $(".loadingaudio")[0].pause()

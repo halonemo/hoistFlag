@@ -366,6 +366,10 @@ a:hover{
 }
 .step-dialog{
 	display: none;
+	transition: all 0.5s;
+}
+.step-dialog.scale{
+	transform: translate(0,-34%) scale(0.6) !important;
 }
 .step-dialog img{
 	display: none;
