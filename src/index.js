@@ -21,9 +21,9 @@ var hoistFlag = {
 		// bufferDuration+" / "+powerLevel;
 		console.log('powerLevel' + powerLevel)
 		// || powerLevel < 5 
-		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 3  ){
+		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 8  ){
 			hoistFlag.mute = hoistFlag.mute + 1
-			if(hoistFlag.mute === 20){
+			if(hoistFlag.mute === 8){
 				hoistFlag.stopAnimate()
 			}
 			console.log('mute'+hoistFlag.mute)
@@ -49,6 +49,7 @@ var hoistFlag = {
 		}
 		hoistFlag.interval && clearInterval(hoistFlag.interval)
 		$(".siri img").eq(0).show().siblings().hide()
+		hoistFlag.stop = true
 	},
 	animate(){
 		hoistFlag.interval = setInterval(() => {
@@ -99,8 +100,6 @@ var hoistFlag = {
 		}, 2000);
 	},
 	close(){
-		$(".step-dialog").hide()
-		hoistFlag.stop = false
 		$(".loading-btn").show()
 		$(".bg-all").attr("class",'bg-all')
 		$(".step-dialog").hide()
@@ -144,6 +143,7 @@ var hoistFlag = {
 		// hoistFlag.animate()
 		hoistFlag.animateStart = false
 		hoistFlag.mute = 0
+		hoistFlag.stop = false
 	},
 	recStart(){
 		recStart()	
