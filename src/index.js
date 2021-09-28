@@ -109,6 +109,7 @@ var hoistFlag = {
 		$(".dialog .close").hide()
 	},
 	start(){
+		$(".loadingaudio")[0].play()
 		if(hoistFlag.tipNum < 1){
 			$(".bgaudio")[0].volume = 0
 			$(".bgaudio")[0].play()
