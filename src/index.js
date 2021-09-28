@@ -109,7 +109,7 @@ var hoistFlag = {
 		$(".dialog .close").hide()
 	},
 	start(){
-		$(".loadingaudio")[0].play()
+		$(".loadingaudio")[0].pause && $(".loadingaudio")[0].pause()
 		if(hoistFlag.tipNum < 1){
 			$(".bgaudio")[0].volume = 0
 			$(".bgaudio")[0].play()
@@ -180,7 +180,7 @@ var hoistFlag = {
 		}
 		if(logMap){param.logMap = logMap}
 		var jsonStr = JSON.stringify(param)
-		$.post("http://stat-dcs-dc-test.wanyol.com/stat/dcs",jsonStr,function(){
+		$.post("https://event.dc.oppomobile.com/stat/dcs",jsonStr,function(){
 			console.log('调用成功')
 		});
 	},
