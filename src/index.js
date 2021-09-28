@@ -33,7 +33,7 @@ var hoistFlag = {
 			console.log('mute'+hoistFlag.mute)
 		}
 		if(!hoistFlag.animateStart){
-			// hoistFlag.animate()
+			hoistFlag.animate()
 		}
 		return false
 	},
@@ -137,7 +137,8 @@ var hoistFlag = {
 		}
 		// 埋点50001 用户升起彩旗
 		hoistFlag.statistics("50001")
-		hoistFlag.animate()
+		// hoistFlag.animate()
+		hoistFlag.animateStart = false
 		hoistFlag.mute = 0
 	},
 	recStart(){
