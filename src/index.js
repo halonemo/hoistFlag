@@ -175,16 +175,46 @@ var hoistFlag = {
 		hoistFlag.flagMaxHeight = hoistFlag.mainHeight * 0.75
 		$(".flag-wrap").css('height',hoistFlag.flagHeight)
 	},
+	formatDate(date) { 
+		function formatTen(num) { 
+			return num > 9 ? (num + '') : ( '0' + num); 
+	   	} 
+		var year = date.getFullYear(); 
+		var month = date.getMonth() + 1; 
+		var day = date.getDate(); 
+		var hour = date.getHours(); 
+		var minute = date.getMinutes(); 
+		var second = date.getSeconds(); 
+		return year + '-' + formatTen(month) + '-' + formatTen(day)+ " " +formatTen(hour)+ ':' +formatTen(minute)+ ':' +formatTen(second); 
+	},
 	statistics(eventID,logMap){
+		var date = new Date()
 		var param = {
 			logTag: "20184_National_Day_game", //业务id
 			eventID: eventID, //事件id
-			appId: 20184
+			appId: 20184,
+			eventTime:hoistFlag.formatDate(date),
+			log_map:{
+				url: window.location.href,
+				time: parseInt(date.getTime() / 1000),
+				// imei: '123456',
+				// duid: '123456'
+			}
 		}
-		if(logMap){param.logMap = logMap}
-		var jsonStr = JSON.stringify(param)
-		$.post("https://event.dc.oppomobile.com/stat/dcs",jsonStr,function(){
-			console.log('调用成功')
+		if(logMap){param.logMap = $.extends(param.logMap,logMap)}
+		$.ajax({
+			type:'post',
+			headers:{
+				// "imei":"123456",
+				// "duid":"123456",
+				// "postTime":parseInt(date.getTime() / 1000)
+			},
+			url:"https://event.dc.oppomobile.com/stat/dcs",
+			data:JSON.stringify(param),
+			dataType:'json/application',
+			success:function(){
+				console.log('调用成功')
+			}
 		});
 	},
 	init: function(){
@@ -213,5 +243,5 @@ hoistFlag.startTime = (new Date()).getTime()
 window.onbeforeunload = function(event) {
 	hoistFlag.statistics("80002")
 	var endTime = (new Date()).getTime() - hoistFlag.startTime 
-	hoistFlag.statistics("80003",{time:endTime})
+	hoistFlag.statistics("80003",{duration:endTime})
  }
