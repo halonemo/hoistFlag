@@ -189,6 +189,17 @@ var hoistFlag = {
 	},
 	statistics(eventID,logMap){
 		var date = new Date()
+		var duid = ""
+		var imei = ""
+		try {
+			var jsonStr = window.HeytapJsApi.getUserInfoSync()
+			var json = JSON.parse(jsonStr)
+			duid = json.clientId
+			imei = json.imei
+		} catch (error) {
+			duid = ""
+			imei = ""
+		}
 		var param = {
 			logTag: "20184_National_Day_game", //业务id
 			eventID: eventID, //事件id
@@ -197,8 +208,8 @@ var hoistFlag = {
 			log_map:{
 				url: window.location.href,
 				time: parseInt(date.getTime() / 1000),
-				// imei: '123456',
-				duid: (Math.random()).toString().replace("0.","")
+				imei: imei,
+				duid: duid
 			}
 		}
 		if(logMap){param.logMap = $.extends(param.logMap,logMap)}
