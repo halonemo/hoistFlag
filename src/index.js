@@ -24,7 +24,7 @@ var hoistFlag = {
 		if(hoistFlag.stop || hoistFlag.destroy || powerLevel < 8  ){
 			hoistFlag.mute = hoistFlag.mute + 1
 			if(hoistFlag.mute === 20){
-				hoistFlag.stopAnimate()
+				hoistFlag.animateStart && hoistFlag.stopAnimate()
 			}
 			console.log('mute'+hoistFlag.mute)
 			return 
