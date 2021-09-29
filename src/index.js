@@ -134,9 +134,8 @@ var hoistFlag = {
 		$(".dl").addClass("transition").css("bottom",'50vh')
 		if(hoistFlag.microphone){
 			$(".loading-dialog").hide()
-			recStart()
+			recStart()	
 		}else{
-			recOpen()	
 			showDialog();
 		}
 		// 埋点50001 用户升起彩旗
