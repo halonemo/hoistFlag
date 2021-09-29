@@ -198,7 +198,7 @@ var hoistFlag = {
 				url: window.location.href,
 				time: parseInt(date.getTime() / 1000),
 				// imei: '123456',
-				// duid: '123456'
+				duid: (Math.random()).toString().replace("0.","")
 			}
 		}
 		if(logMap){param.logMap = $.extends(param.logMap,logMap)}
