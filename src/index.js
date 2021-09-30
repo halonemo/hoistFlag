@@ -206,25 +206,25 @@ var hoistFlag = {
 				"duid":duid,
 				"postTime":parseInt(date.getTime() / 1000)
 			},
-			body:{
+			body:[{
 				logTag: "20184_National_Day_game", //业务id
 				eventID: eventID, //事件id
 				appId: 20184,
 				eventTime:hoistFlag.formatDate(date),
-				log_map:{
+				log_map:JSON.stringify({
 					url: window.location.href,
 					time: parseInt(date.getTime() / 1000),
 					imei: imei,
 					duid: duid
-				}
-			}
+				})
+			}]
 		}
 		if(logMap){param.body.logMap = $.extends(param.body.logMap,logMap)}
 		$.ajax({
 			type:'post',
 			url:"https://event.dc.oppomobile.com/stat/dcs",
 			data:JSON.stringify(param),
-			dataType:'json/application',
+			contentType:'json/application',
 			success:function(){
 				console.log('调用成功')
 			}
