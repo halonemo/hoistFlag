@@ -211,7 +211,7 @@ var hoistFlag = {
 				eventID: eventID, //事件id
 				appId: 20184,
 				eventTime:hoistFlag.formatDate(date),
-				log_map:JSON.stringify({
+				logMap:JSON.stringify({
 					url: window.location.href,
 					time: parseInt(date.getTime() / 1000),
 					imei: imei,
