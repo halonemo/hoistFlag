@@ -192,7 +192,6 @@ var hoistFlag = {
 		var duid = ""
 		var imei = ""
 		try {
-			connectHeytapJsApi()
 			var jsonStr = window.HeytapJsApi.getUserInfoSync()
 			var json = JSON.parse(jsonStr)
 			duid = json.data.clientId
