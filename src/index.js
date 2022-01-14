@@ -122,10 +122,10 @@ var hoistFlag = {
 	start(){
 		$(".loadingaudio")[0].pause && $(".loadingaudio")[0].pause()
 		if(hoistFlag.tipNum < 1){
-			$(".bgaudio")[0].muted = false
-			$(".bgaudio")[1].muted = false
-			$(".bgaudio")[2].muted = false
-			$(".bgaudio")[3].muted = false
+			$(".bgaudio")[0].play()
+			$(".bgaudio")[1].play()
+			$(".bgaudio")[2].play()
+			$(".bgaudio")[3].play()
 			$(".touch-btn .tip").fadeIn()
 		}
 		hoistFlag.tipNum = hoistFlag.tipNum + 1
