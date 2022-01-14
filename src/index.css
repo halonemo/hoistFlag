@@ -295,7 +295,7 @@ a:hover{
 	position: absolute;
 	left:50%;
 	bottom:0;
-	transform: translate(-50%,140%);
+	/* transform: translate(-50%,140%); */
 	display: none;
 	animation-name: loadingbtn;
   	animation-duration: 1.5s;
