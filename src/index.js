@@ -109,7 +109,6 @@ var hoistFlag = {
 		}, 2000);
 	},
 	close(){
-		$(".loading-btn").show()
 		$(".bg-all").attr("class",'bg-all')
 		$(".step-dialog").hide()
 		$(".loading-btn").show()
