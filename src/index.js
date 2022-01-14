@@ -66,7 +66,9 @@ var hoistFlag = {
 			hoistFlag.statistics("60001")
 			$(".bgaudio")[0].muted = false
 			console.log(1)
-			$(".bgaudio")[0].play()
+			setTimeout(() => {
+				$(".bgaudio")[0].play()
+			}, 0);
 			$(".bg-all").addClass("animateAll1")
 			hoistFlag.timeout = setTimeout(() => {
 				hoistFlag.stepIndex = 2
@@ -74,7 +76,9 @@ var hoistFlag = {
 				// 埋点60002 用户成功进入璀璨星空
 				hoistFlag.statistics("60002")
 				$(".bgaudio")[1].muted = false
-				$(".bgaudio")[1].play()
+				setTimeout(() => {
+					$(".bgaudio")[1].play()
+				}, 0);
 				$(".bg-all").addClass("animateAll2")
 				hoistFlag.timeout = setTimeout(() => {
 					hoistFlag.stepIndex = 3
@@ -82,7 +86,9 @@ var hoistFlag = {
 					// 埋点60003 用户成功进入浩瀚银河
 					hoistFlag.statistics("60003")
 					$(".bgaudio")[2].muted = false
-					$(".bgaudio")[2].play()
+					setTimeout(() => {
+						$(".bgaudio")[2].play()
+					}, 0);
 					$(".bg-all").addClass("animateAll3")
 					hoistFlag.timeout = setTimeout(() => {
 						hoistFlag.stepIndex = 4
@@ -90,7 +96,9 @@ var hoistFlag = {
 						// 埋点60004 用户成功进入无边宇宙
 						hoistFlag.statistics("60004")
 						$(".bgaudio")[3].muted = false
-						$(".bgaudio")[3].play()
+						setTimeout(() => {
+							$(".bgaudio")[3].play()
+						}, 0);
 						$(".bg-all").addClass("animateAll4")
 						hoistFlag.stopAnimate()
 						$(".dialog .close").show()
@@ -114,18 +122,10 @@ var hoistFlag = {
 	start(){
 		$(".loadingaudio")[0].pause && $(".loadingaudio")[0].pause()
 		if(hoistFlag.tipNum < 1){
-			// $(".bgaudio")[0].volume = 0
-			// $(".bgaudio")[0].play()
-			// $(".bgaudio")[0].pause()
-			// $(".bgaudio")[1].volume = 0
-			// $(".bgaudio")[1].play()
-			// $(".bgaudio")[1].pause()
-			// $(".bgaudio")[2].volume = 0
-			// $(".bgaudio")[2].play()
-			// $(".bgaudio")[2].pause()
-			// $(".bgaudio")[3].volume = 0
-			// $(".bgaudio")[3].play()
-			// $(".bgaudio")[3].pause()
+			$(".bgaudio")[0].muted = false
+			$(".bgaudio")[1].muted = false
+			$(".bgaudio")[2].muted = false
+			$(".bgaudio")[3].muted = false
 			$(".touch-btn .tip").fadeIn()
 		}
 		hoistFlag.tipNum = hoistFlag.tipNum + 1
