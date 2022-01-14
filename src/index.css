@@ -294,18 +294,18 @@ a:hover{
 	width:50%;
 	position: absolute;
 	left:50%;
-	bottom:0;
-	transform: translate(-50%,140%);
+	bottom:-20vw;
+	margin-left:-25vw;
 	display: none;
-	/* animation-name: loadingbtn; */
+	animation-name: loadingbtn;
   	animation-duration: 1.5s;
 	animation-iteration-count:infinite;
 	animation-timing-function:linear;
 }
 @keyframes loadingbtn {
-	0% {transform:translate(-50%,140%) scale(1);}
-	50% {transform:translate(-50%,140%) scale(0.8);}
-	100% {transform:translate(-50%,140%) scale(1);}
+	0% {transform:scale(1);}
+	50% {transform:scale(0.8);}
+	100% {transform:scale(1);}
 }
 .dialog .loading-line{
 	width:39%;
