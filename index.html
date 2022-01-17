@@ -22,6 +22,7 @@
 </head>
 
 <body onload="hoistFlag.init()">
+	<audio class="loadingaudio" id="loadingaudio" autoplay="autoplay" src="./src/images/5.mp3" controls="controls" style="z-index:100000;position:fixed"></audio>
 	<div class="dialog loading-dialog" >
 		<div class="pic">
 			<img class="loading0" onload="loadingStart()" src="./src/images/loading/loading0.png">
@@ -44,7 +45,6 @@
 			</div>
 		</div>
 	</div>
-	<audio class="loadingaudio" autoplay="autoplay" src="./src/images/5.mp3" controls="controls" style="display: none;"></audio>
 	<!-- 【2】构建界面 -->
 	<div class="main">
 		<div class="mainBox" style="display: none;">

@@ -119,7 +119,7 @@ var hoistFlag = {
 		$(".step-dialog").addClass("scale")
 	},
 	start(){
-		$(".loadingaudio")[0].pause && $(".loadingaudio")[0].pause()
+		$(".loadingaudio")[0].play && $(".loadingaudio")[0].play()
 		if(hoistFlag.tipNum < 1){
 			$(".bgaudio")[0].play()
 			$(".bgaudio")[1].play()
@@ -258,3 +258,16 @@ window.onbeforeunload = function(event) {
 	var endTime = (new Date()).getTime() - hoistFlag.startTime 
 	hoistFlag.statistics("80003",{duration:endTime})
  }
+function audioAutoPlay(id) {
+	var audio = document.getElementById("loadingaudio");
+	audio.play();
+	document.addEventListener(
+		"WeixinJSBridgeReady",
+		function() {
+			alert(1)
+			audio.play();
+		},
+		false
+	);
+}
+audioAutoPlay("audio2");
