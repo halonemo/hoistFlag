@@ -119,7 +119,7 @@ var hoistFlag = {
 		$(".step-dialog").addClass("scale")
 	},
 	start(){
-		$(".loadingaudio")[0].play && $(".loadingaudio")[0].play()
+		$(".loadingaudio")[0].pause && $(".loadingaudio")[0].pause()
 		if(hoistFlag.tipNum < 1){
 			$(".bgaudio")[0].play()
 			$(".bgaudio")[1].play()
