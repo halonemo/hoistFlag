@@ -264,7 +264,6 @@ function audioAutoPlay(id) {
 	document.addEventListener(
 		"WeixinJSBridgeReady",
 		function() {
-			alert(1)
 			audio.play();
 		},
 		false
